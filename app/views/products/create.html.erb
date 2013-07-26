@@ -1,0 +1,20 @@
+<h2>Product Create Page</h2>
+
+<%= params[:product].inspect %>
+<% product = Product.new(params[:product]) %>
+<% product.save %>
+
+<% if product.save %>
+<h2> Congrats, you made a product!</h2>
+Your product looks like this: <%= product.inspect %>
+
+<% else %>
+
+<h2> Your product was not created...</h2>
+This is why <%= product.errors.full_messages %>
+
+<p>Please go back in your browser and fix the darn problem!!!!!!</p>
+
+<% end %>
+
+
